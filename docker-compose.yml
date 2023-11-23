@@ -1,0 +1,13 @@
+# データベース作成
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+      - .my.cnf:/etc/mysql/conf.d/my.cnf
+    env_file:
+      - .env
